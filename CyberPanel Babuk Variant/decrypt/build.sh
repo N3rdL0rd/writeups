@@ -1,0 +1,1 @@
+g++ decrypt.cpp sosemanuk.cpp sosemanuk.h -o decrypt

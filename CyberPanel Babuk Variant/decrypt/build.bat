@@ -1,0 +1,1 @@
+cl /Fe:decrypt.exe decrypt.cpp sosemanuk.cpp
