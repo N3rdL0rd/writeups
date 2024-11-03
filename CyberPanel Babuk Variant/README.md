@@ -1,9 +1,8 @@
 # CyberPanel Babuk Variant
 
-Hash: `53bf41beef030d39bf962e0a267544cc6fc7f67954e14d6bdf3de7738f3e6e9f` (SHA256) from `./dont.run.me`
-Platform: x64 ELF
-
-Decompiled snippets are accessible in `./decompiled.c`.
+- Hash: `53bf41beef030d39bf962e0a267544cc6fc7f67954e14d6bdf3de7738f3e6e9f` (SHA256) from `./dont.run.me`
+- Platform: x64 ELF
+- Decompiled snippets are accessible in `./decompiled.c`.
 
 ## Writeup
 
