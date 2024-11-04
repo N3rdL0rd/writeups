@@ -54,6 +54,9 @@ At it's core, this is nothing but a simple directory crawler. It goes through th
 
 `.frm, .idb, .php, .bak, .sql, .MYD, .MYI, .opt, .js, .css, .html, .svg, .woff, .woff2, .eot, .ico, .png, .jpg, .jpeg, .gif, .mp4, .asp, .jsp, .mp3, .zip, .gz, .tar, .bz2, .json, .bk, .doc, .pdf, .xlsx, .xls, .xlt, .et, .xlsm, .db, .csv, .xltx, .xltm, .mht, .mhtml, .dbf, .mdb, .vue`
 
+> [!NOTE]
+> Some sub-variants will check for other file extensions, specifically: `.log, .vmx, .ovf, .vmdk, .vmxf, .vmsd, .vmsn, .vswp, .vmss, .vmem, .nvram, .ova`
+
 ***encrypt_file()***
 
 This is the other major modified function in the sample. In the original Babuk, ECC is used to generate an ephemeral encryption key for SOSEMANUK<sup>[[1]](#references)</sup> (a semi-obscure stream cipher), but in this sample, this functionality is removed and is instead replaced with a SHA256 hash of an uninitialized byte array with length `32` - which results in the following key:
@@ -79,10 +82,13 @@ A proof-of-concept decryptor for files encrypted by the sample is included in th
 ***Hashes***
 
 - SHA256: `53bf41beef030d39bf962e0a267544cc6fc7f67954e14d6bdf3de7738f3e6e9f`
+- SHA256: `113c3c3aeafbc59615cc23cd47b0cb1f22145ed6d7bfeca283c3fdf4d8076881`
+- SHA256: `a1145bfafd1fe4ab5db7d03836af4289d0622bf596f30a50320accb02e337157`
 
 ***Other***
 
 - TOX ID: `970F104D828F2696FF2508C0EFB3BEAB3220DFF8B7A45EBFBE86A1DBE2830B62CEBB32248B46`
+- TOX ID: `A162BBD93F0E3454ED6F0B2BC39C645E9C4F88A80B271A93A4F55CF4B8310C2E27D1D0E0EE1B`
 
 > [!NOTE]
 > A YARA rule is available in `./cyberpanel_babuk_variant.yara`.
