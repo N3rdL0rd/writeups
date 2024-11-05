@@ -70,7 +70,15 @@ This is the other major modified function in the sample. In the original Babuk, 
 
 This key is fed directly to SOSEMANUK to encrypt the file in 10MB chunks, with a trailing set of 32 bytes of zeros. If these zeros are included in normal decryption, they can cause invalid data to be returned - make sure to ignore them during decryption.
 
-A proof-of-concept decryptor for files encrypted by the sample is included in the `./decrypt` folder.
+## Decryptor
+
+A proof-of-concept decryptor for files encrypted by the sample is included in the `./decrypt` folder, and a sample of an encrypted file is located at `./test.json.encryp`.
+
+Usage:
+
+```txt
+decrypt <encrypted_file> <output_file> <key_file>
+```
 
 ## Indicators of Compromise
 
