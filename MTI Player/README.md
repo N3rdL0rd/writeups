@@ -5,7 +5,6 @@
 MTI (Musical Theatre International) Player is MTI's in-house software for playing production tracks for their licensed musicals. It's MacOS-only, it's a bit of a black box, and it's the only way to play production tracks (eg. non-watermarked tracks) for shows. For "security reasons" you have to also grant it permissions to record your screen, access your full disk, and it forces you to close out of specific other applications (the terminal, Finder, Safari, etc.) before it will play anything. Normally, I don't try to bypass security features like this, but when some software is *this* restrictive, I can't help but be curious as to what's going on under the hood - Also, I don't have a Mac, and I don't want to give Apple more money.
 
 ![MTI's FAQ: "security features"](img/image-1.png)
-<center><small><i>Even the grammar is bad!</i></small></center>
 
 This phenomena in my brain reminds me a bit of the [Streisand Effect](https://en.wikipedia.org/wiki/Streisand_effect), which dictates that the more you try to hide something, the more people will end up finding out about it. For me at least, the more you try to restrict me from doing something with annoying "security" features and what seems to be borderline spyware, the more time I'll spend reversing it. But without further ado, let's start poking around.
 
