@@ -1,4 +1,3 @@
-# N3rdL0rd's Writeups
 
 En lieu of a blog, I keep my writeups and small code snippets here.
 
