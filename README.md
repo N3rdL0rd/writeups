@@ -3,5 +3,5 @@ En lieu of a blog, I keep my writeups and small code snippets here.
 
 **Posts:**
 
-- [CyberPanel Babuk Variant](./CyberPanel%20Babuk%20Variant/)
-- [MTI Player](./MTI%20Player/)
+- [CyberPanel Babuk Variant](./CyberPanel-Babuk-Variant/)
+- [MTI Player](./MTI-Player/)
