@@ -1,4 +1,9 @@
-# CyberPanel Babuk Variant
+---
+title: "Reversing and Decrypting a CyberPanel Babuk Variant"
+date: "2024-11-03"
+excerpt: "There have been a few reported cases of this particular strain of ransomware, and it has a unique security flaw that allows it to be universally decrypted."
+tags: ["rev", "malware", "research"]
+---
 
 - Hash: `53bf41beef030d39bf962e0a267544cc6fc7f67954e14d6bdf3de7738f3e6e9f` (SHA256) from `./dont.run.me`
 - Platform: x64 ELF
@@ -54,8 +59,8 @@ At it's core, this is nothing but a simple directory crawler. It goes through th
 
 `.frm, .idb, .php, .bak, .sql, .MYD, .MYI, .opt, .js, .css, .html, .svg, .woff, .woff2, .eot, .ico, .png, .jpg, .jpeg, .gif, .mp4, .asp, .jsp, .mp3, .zip, .gz, .tar, .bz2, .json, .bk, .doc, .pdf, .xlsx, .xls, .xlt, .et, .xlsm, .db, .csv, .xltx, .xltm, .mht, .mhtml, .dbf, .mdb, .vue`
 
-> [!NOTE]
-> Some sub-variants will check for other file extensions, specifically: `.log, .vmx, .ovf, .vmdk, .vmxf, .vmsd, .vmsn, .vswp, .vmss, .vmem, .nvram, .ova`
+!!! note
+    Some sub-variants will check for other file extensions, specifically: `.log, .vmx, .ovf, .vmdk, .vmxf, .vmsd, .vmsn, .vswp, .vmss, .vmem, .nvram, .ova`
 
 ***encrypt_file()***
 
@@ -98,8 +103,8 @@ decrypt <encrypted_file> <output_file> <key_file>
 - TOX ID: `970F104D828F2696FF2508C0EFB3BEAB3220DFF8B7A45EBFBE86A1DBE2830B62CEBB32248B46`
 - TOX ID: `A162BBD93F0E3454ED6F0B2BC39C645E9C4F88A80B271A93A4F55CF4B8310C2E27D1D0E0EE1B`
 
-> [!NOTE]
-> A YARA rule is available in `./cyberpanel_babuk_variant.yara`.
+!!! note
+    A YARA rule is available in `./cyberpanel_babuk_variant.yara`.
 
 ## Footnotes
 
@@ -111,4 +116,4 @@ decrypt <encrypted_file> <output_file> <key_file>
 2. The eSTREAM Project's [documentation on SOSEMANUK](https://web.archive.org/web/20210507120806/https://www.ecrypt.eu.org/stream/sosemanukpf.html), and [Wikipedia too](https://en.wikipedia.org/wiki/SOSEMANUK)
 3. The [C Thread Pool](https://github.com/Pithikos/C-Thread-Pool) library
 
-And a profound thank you to you, dear reader, for suffering through this poorly written writeup, which was made with :heart: by N3rdL0rd.
+And a profound thank you to you, dear reader, for suffering through this poorly written writeup, which was made with ❤️ by N3rdL0rd.

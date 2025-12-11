@@ -1,0 +1,14 @@
+{% extends "_common.html" %}
+
+{% block title %}{{ post.title }} | N3rdL0rd's writeups{% endblock %}
+
+{% block main %}
+<div class="content-wrapper">
+    <main class="main-content">
+        <article class="post-content">
+            <h1>{{ post.title|safe }}</h1>
+            {{ post.content|safe }}
+        </article>
+    </main>
+</div>
+{% endblock %}

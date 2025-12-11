@@ -1,0 +1,832 @@
+@import url('/static/css/theme.css');
+@import url('/static/css/codehilite.css');
+
+h1 {
+    color: var(--header-color);
+}
+
+.responsive-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 160px;
+    display: block;
+    margin: 0 auto;
+}
+
+.tagline {
+    text-align: center;
+    color: var(--dark-link-color);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .responsive-logo {
+        max-height: 120px;
+    }
+}
+
+.rellax {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.parallax-container {
+    width: 100vw;
+    margin-left: calc(-50vw);
+    left: 50%;
+    position: relative;
+    overflow-x: visible;
+    overflow-y: hidden;
+    perspective: 2px;
+    background-color: var(--landscape-background);
+}
+
+.parent-container {
+    overflow-x: visible;
+    position: relative;
+    width: 100%;
+}
+.landscape-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.landscape-layer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landscape-layer img.landscape-sun {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    top: 35%;
+}
+
+.logo-container {
+    position: absolute;
+    bottom: 6vh;
+    left: 8vh;
+    transform: translateX(-50%);
+    margin: 0; /* Remove auto margin */
+    width: auto; /* Adjust width dynamically */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo {
+    width: 90vh;
+    height: auto;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    max-width: var(--max-body-width);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-content {
+    padding: 2rem;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.blog-sidebar {
+    padding: 1rem;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.post-preview {
+    border-bottom: 1px solid var(--dark-border-color);
+    padding: 1rem 0;
+}
+
+.post-preview:last-child {
+    border-bottom: none;
+}
+
+.post-preview h3 {
+    color: var(--header-color);
+    margin-bottom: 0.5rem;
+}
+
+.post-preview time {
+    color: var(--dark-text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.membercard {
+    background: rgba(19, 5, 28, 0.9);
+    border: 1px solid var(--dark-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.membercard:hover {
+    transform: translateY(-5px);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 3px solid var(--dark-border-color);
+    object-fit: cover;
+}
+
+.membercard h3 {
+    text-align: center;
+    color: var(--header-color);
+    margin-bottom: 0.5rem;
+}
+
+.specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: var(--dark-highlighted-background-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+}
+
+a.tag {
+    color: white;
+}
+
+.bio {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.fun-facts {
+    background: var(--dark-highlighted-background-color);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.fun-facts h4 {
+    color: var(--header-color);
+    margin-bottom: 0.5rem;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.fun-facts h4 {
+    margin-top: 0;
+}
+
+.fun-facts li {
+    margin-bottom: 0.5rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    color: #cb93ff !important;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 2.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: clamp(2.5rem, 1.5vw + 2rem, 4rem);
+    height: clamp(2.5rem, 1.5vw + 2rem, 4rem);
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 clamp(0.1rem, 0.1vw + 0.05rem, 0.2rem) clamp(0.25rem, 0.3vw + 0.15rem, 0.5rem) rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.scroll-button:hover {
+    background: white;
+}
+
+.scroll-button::after {
+    content: '';
+    display: inline-block;
+    width: clamp(0.5rem, 0.4vw + 0.3rem, 1rem);
+    height: clamp(0.5rem, 0.4vw + 0.3rem, 1rem);
+    border-right: clamp(0.1rem, 0.1vw + 0.05rem, 0.15rem) solid #000;
+    border-bottom: clamp(0.1rem, 0.1vw + 0.05rem, 0.15rem) solid #000;
+    transform: rotate(45deg);
+    margin-top: clamp(-0.3rem, -0.1vw - 0.15rem, -0.1rem);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem; /* Consistent padding for alignment */
+    }
+
+    .blog-sidebar {
+        order: 1;
+        padding: 1rem; /* Match padding with content-wrapper */
+    }
+
+    .main-content {
+        order: 2;
+        padding: 1rem; /* Match padding with content-wrapper */
+    }
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-container {
+        position: absolute;
+        left: 1vh;;
+    }
+
+    .landscape-elements {
+        width: 100%; /* Adjust width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 90%; /* Add padding from screen edges */
+        margin: 0 auto; /* Center elements */
+    }
+
+    .scroll-button {
+        bottom: 2vh;
+    }
+
+    .landscape-layer img {
+        position: absolute;
+        top: auto; /* Remove centering */
+        bottom: 0; /* Align to the bottom */
+        left: 50%;
+        transform: translateX(-50%); /* Adjust horizontal alignment only */
+        width: 100%;
+        /* Adjust height based on viewport and top safe area, aligned to bottom */
+        height: calc(60vh - env(safe-area-inset-top, 0px)); 
+        object-fit: cover;
+    }
+}
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #13051c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-logo {
+    max-width: 200px;
+    opacity: 0.8;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #e794ff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+pre[class*="language-"] {
+    margin: 1.5em 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+    overflow: auto;
+}
+
+code[class*="language-"] {
+    font-family: "JetBrains Mono", "Fira Code", Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.9rem;
+}
+
+div.code-toolbar {
+    position: relative;
+}
+
+div.code-toolbar > .toolbar {
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+div.code-toolbar:hover > .toolbar {
+    opacity: 1;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item {
+    display: inline-block;
+    margin-left: 0.2em;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+    background: rgba(224, 130, 255, 0.2);
+    color: #e794ff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3em 0.7em;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button:hover {
+    background: rgba(224, 130, 255, 0.4);
+}
+
+/* Line numbers */
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: 0;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid rgba(224, 130, 255, 0.2);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Inline code */
+:not(pre) > code {
+    padding: 0.2em 0.4em;
+    margin: 0 0.2em;
+    border-radius: 3px;
+    background: var(--background-600);
+    color: var(--text-100);
+    font-family: "JetBrains Mono", "Fira Code", Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.85em;
+}
+
+/* General styling for the navigation bar for a cleaner look */
+nav ul {
+    /* If you want to center the nav items or add more specific layout, do it here */
+    /* Example: text-align: center; */
+    padding-left: 0; /* Remove default padding if holiday.css adds it */
+}
+
+nav ul li {
+    display: inline-block; /* Align items horizontally */
+    margin: 0 3px; /* Add a little space between items */
+}
+
+/* Subtle enhancement for all navigation links */
+nav ul li a {
+    padding: 8px 15px; /* Add some padding for a better clickable area */
+    border-radius: 5px; /* Slightly rounded corners for a softer look */
+    text-decoration: none; /* Ensure no underline by default */
+    color: var(--dark-link-color); /* Use your defined link color */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth transition */
+    font-weight: 500; /* A bit more presence than normal weight */
+}
+
+nav ul li a:hover,
+nav ul li a:focus { /* :focus for accessibility */
+    color: var(--dark-text-color); /* Change text color on hover, e.g., to your main text color */
+    background-color: var(--dark-link-hover-color); /* Subtle background change on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Style for the kbd element in the footer, if you want to make it consistent */
+footer kbd {
+    background-color: var(--dark-highlighted-background-color);
+    border: 1px solid var(--dark-border-color);
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-family: "JetBrains Mono", "Fira Code", Monaco, Consolas, "Liberation Mono", monospace;
+    color: var(--header-color);
+}
+
+/* allows to align images left/right/center in markdown */
+/* see https://stackoverflow.com/a/39614958/25287914 */
+
+img[alt$=">"] {
+    float: right;
+}
+
+img[alt$="<"] {
+    float: left;
+}
+
+img[alt$="><"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    float: none!important;
+}
+
+/* --- Base Admonition Styling --- */
+.admonition {
+    /* Use the highlighted background (var(--background-800)) */
+    background-color: var(--dark-highlighted-background-color); 
+    border: 1px solid var(--dark-border-color);
+    border-left: 5px solid var(--accent-500); /* Default to Accent color */
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden; /* Keeps child margins inside */
+}
+
+/* Title Bar */
+.admonition .admonition-title {
+    /* Slightly lighter than the body (var(--background-700)) */
+    color: var(--header-color);
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    /* Optional: Add an icon or text transform */
+    text-transform: uppercase;{% extends "_common.html" %}
+
+{% block title %}Home | N3rdL0rd's writeups{% endblock %}
+
+{% block head %}
+    <style>
+        /* Homepage specific styles */
+        .intro-card {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--dark-border-color);
+            padding-bottom: 2rem;
+        }
+
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .post-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 1px solid var(--background-700);
+            border-radius: 6px;
+            background-color: var(--background-950);
+            transition: border-color 0.2s;
+        }
+
+        .post-item:hover {
+            border-color: var(--secondary-500);
+        }
+
+        .post-meta {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--accent-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .post-title {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .post-title a {
+            text-decoration: none;
+            color: var(--primary-300);
+        }
+
+        .post-title a:hover {
+            color: var(--secondary-400);
+        }
+
+        .post-excerpt {
+            color: var(--text-200);
+            margin: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+
+    <!-- Welcome Section -->
+    <section class="intro-card">
+        <h2>Welcome to the Grid</h2>
+        <p>
+            Hello! I am <strong>N3rdL0rd</strong>. This is where I document my journey through CTFs, 
+            Python development, and general tinkering.
+        </p>
+    </section>
+
+    <section>
+        <h3><i class="fa-solid fa-terminal"></i> Recent Posts</h3>
+        
+        {% if posts %}
+            <ul class="post-list">
+                {% for post in posts %}
+                <li class="post-item">
+                    <span class="post-meta">
+                        <i class="fa-regular fa-calendar"></i> {{ post.date }} &nbsp;|&nbsp; 
+                        <i class="fa-solid fa-tag"></i> {{ post.category }}
+                    </span>
+                    <h4 class="post-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h4>
+                    <p class="post-excerpt">
+                        {{ post.summary }}
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <p><a href="/posts">View Archive &rarr;</a></p>
+        {% else %}
+            <div class="admonition warning">
+                <p class="admonition-title">No Content</p>
+                <p>No posts found. Please run the generator.</p>
+            </div>
+        {% endif %}
+    </section>
+
+{% endblock %}
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+}
+
+/* Content Area */
+.admonition > p {
+    color: var(--dark-text-color);
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Fix for multiple paragraphs inside an admonition */
+.admonition > p + p {
+    padding-top: 0;
+}
+
+/* --- Specific Variations --- */
+
+/* NOTE / INFO (Default) - Uses Accent (Blue/Grey) */
+.admonition.note {
+    border-left-color: var(--accent-500);
+}
+.admonition.note .admonition-title {
+    color: var(--accent-300);
+}
+
+/* TIP / SUCCESS - Uses Secondary (Teal/Greenish) */
+.admonition.tip, 
+.admonition.success {
+    border-left-color: var(--secondary-500);
+}
+.admonition.tip .admonition-title, 
+.admonition.success .admonition-title {
+    color: var(--secondary-300);
+    /* Optional: Tint the header background slightly for tips */
+    background-color: var(--secondary-900); 
+}
+
+/* WARNING - Uses Primary Lighter (Muted Red/Mauve) */
+.admonition.warning {
+    border-left-color: var(--primary-400);
+}
+.admonition.warning .admonition-title {
+    color: var(--primary-300);
+}
+
+/* DANGER / ERROR - Uses Primary Darker/Intense */
+.admonition.danger, 
+.admonition.error, 
+.admonition.failure {
+    border-left-color: var(--primary-600);
+}
+.admonition.danger .admonition-title, 
+.admonition.error .admonition-title {
+    color: var(--primary-200);
+    background-color: var(--background-950); /* Darker header for danger */
+}
+
+/* CODE BLOCKS INSIDE ADMONITIONS */
+/* Ensures code blocks inside admonitions match your theme */
+.admonition code {
+    color: var(--code-text-color);
+    background-color: var(--dark-code-background-color);
+}
+
+/* --- Layout for Sidebar + Main --- */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: var(--max-body-width);
+    margin: 0 auto;
+}
+
+.main-content {
+    flex: 3; /* Takes up 75% space */
+    min-width: 0; /* Prevents code blocks from breaking flex */
+}
+
+.blog-sidebar {
+    flex: 1; /* Takes up 25% space */
+    min-width: 300px;
+    border-left: 1px solid var(--dark-border-color);
+    padding-left: 2rem;
+}
+
+/* On mobile, stack them */
+@media (max-width: 768px) {
+    .content-wrapper { flex-direction: column; }
+    .blog-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--dark-border-color); padding-top: 2rem; }
+}
+
+/* --- Post Card Styling (Used in Archive & Sidebar) --- */
+.post-card {
+    background-color: var(--background-950);
+    border: 1px solid var(--dark-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    border-color: var(--secondary-500);
+    transform: translateY(-2px);
+}
+
+.post-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.post-card h3 a {
+    text-decoration: none;
+    color: var(--primary-300);
+}
+
+.post-card h3 a:hover {
+    color: var(--secondary-400);
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: var(--text-400);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* --- Tag Pills --- */
+.tag-pill {
+    display: inline-block;
+    background-color: var(--accent-900);
+    color: var(--accent-300);
+    border: 1px solid var(--accent-700);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.tag-pill:hover {
+    background-color: var(--accent-700);
+    color: var(--text-50);
+    border-color: var(--accent-500);
+}
+
+/* --- Article Header Specifics --- */
+.post-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--dark-border-color);
+    padding-bottom: 1rem;
+}
+
+.post-header h1 { margin-bottom: 0.5rem; color: var(--primary-200); }

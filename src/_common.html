@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="holiday-css-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}N3rdL0rd's writeups{% endblock %}</title>
+    <meta name="title" content="N3rdL0rd's writeups" />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="https://n3rdl0rd.github.io/holiday.css/dist/holiday_infbinft.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                processEscapes: true
+            },
+            TeX: {
+                Macros: {
+                    ket: ["\\left|#1\\right\\rangle", 1],
+                    bra: ["\\left\\langle#1\\right|", 1],
+                    braket: ["\\left\\langle#1|#2\\right\\rangle", 2]
+                }
+            }
+        });
+    </script>
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header>
+        <h1>N3rdL0rd's writeups</h1>
+    </header>
+    {% endblock %}
+    {% block nav %}
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">Posts</a></li>
+        </ul>
+    </nav>
+    {% endblock %}
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ year }} N3rdL0rd. Made with ❤️.</p>
+        <noscript>
+            <br>
+            <p>JavaScript is disabled. This affects nothing on the site, have a nice day!</p>
+        </noscript>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

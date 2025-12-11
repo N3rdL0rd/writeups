@@ -8,7 +8,7 @@ QLab is a theatre cueing system that allows you to control audio, video, lightin
 
 ## Recon and Initial Analysis
 
-To start, I opened the Mach-O binary in aarch64 mode in Binary Ninja. I'm running this on a real physical Mac, which means that I'm stuck with Apple silicon and therefore, ARM. This doesn't prove to be too much of an issue, really, but analysis took exponentially longer as compared to x64 for some obscene reason. After about an hour of Binja chugging away at the binary. But once it loads...
+To start, I opened the Mach-O binary in aarch64 mode in Binary Ninja. I'm running this on a real physical Mac, which means that I'm stuck with Apple silicon and therefore, ARM. This doesn't prove to be too much of an issue, really, but analysis took exponentially longer as compared to x64 for some obscene reason. After about an hour of Binja chugging away at the binary, it finally loads fully. But once it does...
 
 ![symbols!](image.png)
 

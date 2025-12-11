@@ -1,3 +1,11 @@
+# /// script
+# dependencies = [
+#     "colorama",
+#     "tabulate",
+#     "requests",
+# ]
+# ///
+
 import requests
 import argparse
 import sys
